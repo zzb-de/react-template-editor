@@ -98,7 +98,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/home/konstantin/zzb/react-template-editor/tsconfig.test.json"
+        "tsConfigFile": "tsconfig.test.json"
       }
     }
   },
