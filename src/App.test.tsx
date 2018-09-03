@@ -11,7 +11,8 @@ it("renders without crashing", () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 
-it("contains the text 'Test'", () => {
+it("contains the editor component", () => {
     const app = shallow(<App />);
-    expect(app.text()).toEqual("Test");
+    expect(app.children().length).toEqual(1);
+    expect(app.childAt(0).name()).toEqual("Editor");
 });
