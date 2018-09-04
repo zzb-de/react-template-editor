@@ -17,7 +17,7 @@ it("contains the editor component", () => {
     expect(app.containsMatchingElement(<Editor content=""/>)).toBeTruthy();
 });
 
-it("should save the content given by onChange", () => {
+it("saves the content given by onChange", () => {
     const app = shallow(<App />);
     const editor = app.find("Editor");
     const onChange = editor.prop<OnChange>("onChange");
