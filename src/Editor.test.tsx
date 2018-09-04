@@ -25,3 +25,20 @@ it("escapes valid html", () => {
     const editor = render(<Editor content={content}/>);
     expect(editor.text()).toEqual("<p></p>&lt;");
 });
+
+it("works when onChange is not given", () => {
+    const editor = shallow(<Editor/>);
+    editor.find("div").simulate("input");
+});
+
+it("calls onChange when the input changes", () => {
+    let called = false;
+
+    function onChange(text: string) {
+        called = true;
+        expect(text).toEqual("Test");
+    }
+    const editor = shallow(<Editor onChange={onChange}/>);
+    editor.find("div").simulate("input", { target: { innerText: "Test" } });
+    expect(called).toBeTruthy();
+});
