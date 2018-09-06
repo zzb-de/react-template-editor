@@ -18,6 +18,9 @@ export interface EditorProps {
 }
 
 class Editor extends React.Component<EditorProps> {
+
+    private element = React.createRef<HTMLDivElement>();
+
     constructor(props: EditorProps) {
         super(props);
         this.onInput = this.onInput.bind(this);
@@ -32,8 +35,16 @@ class Editor extends React.Component<EditorProps> {
                 contentEditable
                 dangerouslySetInnerHTML={{ __html: escapedContent }}
                 onInput={this.onInput}
+                ref={this.element}
             />
         );
+    }
+
+    shouldComponentUpdate(nextProps: EditorProps): boolean {
+        if (!this.element.current) {
+            return true;
+        }
+        return nextProps.content !== this.element.current.innerText;
     }
 
     private onInput(evt: React.SyntheticEvent): void {
