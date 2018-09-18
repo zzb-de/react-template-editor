@@ -19,7 +19,7 @@ export class StyleButton extends React.Component<StyleButtonProps, any> {
         return (
             <button
                 style={{ backgroundColor }}
-                onClick={this.onClick}
+                onMouseDown={this.onClick}
             >
               {this.props.label}
             </button>

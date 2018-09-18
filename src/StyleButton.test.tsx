@@ -27,6 +27,6 @@ it("calls onToggle when the input changes", () => {
     const styleButton = mount(
         <StyleButton style="" label="" onToggle={onToggle}/>
     );
-    styleButton.find("button").simulate("click");
+    styleButton.find("button").simulate("mousedown");
     expect(called).toBeTruthy();
 });
