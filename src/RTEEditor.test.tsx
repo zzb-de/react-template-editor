@@ -15,11 +15,6 @@ it("contains an editor div with a certain class", () => {
     expect(editor.find(".RichEditor-editor")).toHaveLength(1);
 });
 
-it("contains an editor div with a certain class", () => {
-    const editor = shallow(<RTEEditor />);
-    expect(editor.find(".RichEditor-editor")).toHaveLength(1);
-});
-
 xit("displays the input text", () => {
     let onContentChangeCalled = false;
     function onContentChange(state: ContentState) {
