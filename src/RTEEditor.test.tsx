@@ -15,6 +15,8 @@ it("contains an editor div with a certain class", () => {
     expect(editor.find(".RichEditor-editor")).toHaveLength(1);
 });
 
+// This test can't work,
+// since keyDown events will not change the element state in JSDom.
 xit("displays the input text", () => {
     let onContentChangeCalled = false;
     function onContentChange(state: ContentState) {
