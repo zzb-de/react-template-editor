@@ -11,7 +11,9 @@ export default class App extends React.Component<AppProps, {}> {
 
     render() {
         return (
-            <RTEEditor />
+            <div className="rte-app">
+                <RTEEditor/>
+            </div>
         );
     }
 }
