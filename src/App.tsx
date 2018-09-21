@@ -1,34 +1,23 @@
+import { EditorState } from "draft-js";
 import * as React from "react";
-import "./App.css";
-import Editor from "./Editor";
+import { RTEEditor } from "./RTEEditor";
 
-interface AppState {
-    content: string;
+interface MyEditorProps {
 }
 
-class App extends React.Component<{}, AppState> {
-
-    state: AppState = {
-        content: ""
-    };
-
-    constructor(props: {}) {
+export class App extends React.Component<MyEditorProps, any> {
+    constructor(props: MyEditorProps) {
         super(props);
-        this.onChange = this.onChange.bind(this);
+        this.state = {editorState: EditorState.createEmpty()};
+    }
+
+    handleChange(e: EditorState) {
+        this.setState({ editorState: e });
     }
 
     render() {
-        const { content } = this.state;
         return (
-            <div className="rte-app">
-                <Editor content={content} onChange={this.onChange}/>
-            </div>
+            <RTEEditor />
         );
     }
-
-    private onChange(text: string): void {
-        this.setState({ content: text });
-    }
 }
-
-export default App;
