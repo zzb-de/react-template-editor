@@ -5,7 +5,7 @@ import { RTEEditor } from "./RTEEditor";
 interface AppProps {
 }
 
-export class App extends React.Component<AppProps, any> {
+export default class App extends React.Component<AppProps, {}> {
     constructor(props: AppProps) {
         super(props);
         this.state = {editorState: EditorState.createEmpty()};
