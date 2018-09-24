@@ -7,7 +7,7 @@ interface StyleButtonProps {
     readonly onToggle?: (style: string) => void;
 }
 
-export class StyleButton extends React.Component<StyleButtonProps, any> {
+export class StyleButton extends React.Component<StyleButtonProps, {}> {
 
     constructor(props: Readonly<StyleButtonProps>) {
         super(props);
@@ -15,10 +15,10 @@ export class StyleButton extends React.Component<StyleButtonProps, any> {
     }
 
     render() {
-        const backgroundColor = this.props.toggled ? "#e0e0e0" : "#f0f0f0";
+        const backgroundColor = this.props.toggled ? "toggled" : "not-toggled";
         return (
             <button
-                style={{ backgroundColor }}
+                className={backgroundColor}
                 onMouseDown={this.onClick}
             >
               {this.props.label}
