@@ -1,10 +1,10 @@
 import * as React from "react";
 
 interface StyleButtonProps {
-    style: string;
-    label: string;
-    toggled?: boolean;
-    onToggle: (style: string) => void;
+    readonly style: string;
+    readonly label: string;
+    readonly toggled?: boolean;
+    readonly onToggle?: (style: string) => void;
 }
 
 export class StyleButton extends React.Component<StyleButtonProps, any> {
@@ -28,6 +28,6 @@ export class StyleButton extends React.Component<StyleButtonProps, any> {
 
     private onClick(e: React.MouseEvent) {
         e.preventDefault();
-        this.props.onToggle(this.props.style);
+        if (this.props.onToggle) this.props.onToggle(this.props.style);
     }
 }
