@@ -9,7 +9,7 @@ import * as React from "react";
 import { StyleButton } from "./StyleButton";
 
 export interface RTEEditorProps {
-    onContentChange?: (content: ContentState) => void;
+    readonly onContentChange?: (content: ContentState) => void;
 }
 
 interface RTEEditorState {
