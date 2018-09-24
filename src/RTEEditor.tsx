@@ -40,7 +40,7 @@ export class RTEEditor extends React.Component<RTEEditorProps, RTEEditorState> {
             }
         }
 
-        const inlineStyle = this.state.editorState.getCurrentInlineStyle();
+        const inlineStyle = editorState.getCurrentInlineStyle();
         return (
             <div className="rte-editor">
                 <StyleButton
