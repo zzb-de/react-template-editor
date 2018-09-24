@@ -8,20 +8,20 @@ import {
 import * as React from "react";
 import { StyleButton } from "./StyleButton";
 
-export interface MyEditorProps {
+export interface RTEEditorProps {
     onContentChange?: (content: ContentState) => void;
 }
 
-interface MyEditorState {
+interface RTEEditorState {
     readonly editorState: EditorState;
 }
 
-export class RTEEditor extends React.Component<MyEditorProps, MyEditorState> {
-    state: MyEditorState = {
+export class RTEEditor extends React.Component<RTEEditorProps, RTEEditorState> {
+    state: RTEEditorState = {
         editorState: EditorState.createEmpty(),
     };
 
-    constructor(props: Readonly<MyEditorProps>) {
+    constructor(props: Readonly<RTEEditorProps>) {
         super(props);
         this.onChange = this.onChange.bind(this);
 
