@@ -32,11 +32,11 @@ export class RTEEditor extends React.Component<RTEEditorProps, RTEEditorState> {
 
     render() {
         const {editorState} = this.state;
-        let className = "RichEditor-editor";
+        let className = "rte-editor-container";
         const contentState = editorState.getCurrentContent();
         if (!contentState.hasText()) {
             if (contentState.getBlockMap().first().getType() !== "unstyled") {
-                className += " RichEditor-hidePlaceholder";
+                className += " rte-editor-no-text";
             }
         }
 
