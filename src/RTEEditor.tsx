@@ -67,7 +67,7 @@ export class RTEEditor extends React.Component<RTEEditorProps, RTEEditorState> {
                         handleKeyCommand={this.handleKeyCommand}
                         keyBindingFn={this.mapKeyToEditorCommand}
                         onChange={this.onChange}
-                        placeholder="Tell a story..."
+                        placeholder="Bitte Text eingeben."
                         spellCheck
                     />
                 </div>
