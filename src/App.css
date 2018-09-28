@@ -1,5 +1,13 @@
-.rte-app .rte-editor {
+.rte-app .DraftEditor-root {
     width: 600px;
     height: 400px;
     border: solid 1px lightgray;
+}
+
+.toggled {
+    background-color: #e0e0e0;
+}
+
+.not-toggled {
+    background-color: #f0f0f0;
 }

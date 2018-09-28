@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 
 import App from "./App";
-import Editor, { OnChange } from "./Editor";
+import { RTEEditor } from "./RTEEditor";
 
 it("renders without crashing", () => {
     const div = document.createElement("div");
@@ -14,13 +14,5 @@ it("renders without crashing", () => {
 
 it("contains the editor component", () => {
     const app = shallow(<App />);
-    expect(app.containsMatchingElement(<Editor content=""/>)).toBeTruthy();
-});
-
-it("saves the content given by onChange", () => {
-    const app = shallow(<App />);
-    const editor = app.find("Editor");
-    const onChange = editor.prop<OnChange>("onChange");
-    onChange("Test");
-    expect(app.find("Editor").prop("content")).toEqual("Test");
+    expect(app.containsMatchingElement(<RTEEditor />)).toBeTruthy();
 });

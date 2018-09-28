@@ -1,34 +1,17 @@
 import * as React from "react";
-import "./App.css";
-import Editor from "./Editor";
+import { RTEEditor } from "./RTEEditor";
 
-interface AppState {
-    content: string;
+interface AppProps {
 }
 
-class App extends React.Component<{}, AppState> {
-
-    state: AppState = {
-        content: ""
-    };
-
-    constructor(props: {}) {
-        super(props);
-        this.onChange = this.onChange.bind(this);
-    }
+export default class App extends React.Component<AppProps, {}> {
 
     render() {
-        const { content } = this.state;
         return (
             <div className="rte-app">
-                <Editor content={content} onChange={this.onChange}/>
+                <link rel="stylesheet" type="text/css" href="App.css"/>
+                <RTEEditor/>
             </div>
         );
     }
-
-    private onChange(text: string): void {
-        this.setState({ content: text });
-    }
 }
-
-export default App;
