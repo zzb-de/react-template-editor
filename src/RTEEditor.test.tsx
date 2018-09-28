@@ -12,7 +12,7 @@ it("renders a div with a certain class", () => {
 
 it("contains an editor div with a certain class", () => {
     const editor = shallow(<RTEEditor />);
-    expect(editor.find(".RichEditor-editor")).toHaveLength(1);
+    expect(editor.find(".rte-editor-container")).toHaveLength(1);
 });
 
 // This test can't work,
