@@ -5,9 +5,6 @@ interface AppProps {
 }
 
 export default class App extends React.Component<AppProps, {}> {
-    constructor(props: AppProps) {
-        super(props);
-    }
 
     render() {
         return (
