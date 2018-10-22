@@ -3,8 +3,8 @@ import * as ReactDOM from "react-dom";
 
 import { shallow } from "enzyme";
 
+import Editor, { OnChange } from "../lib/Editor";
 import App from "./App";
-import Editor, { OnChange } from "./Editor";
 
 it("renders without crashing", () => {
     const div = document.createElement("div");

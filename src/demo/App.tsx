@@ -1,6 +1,6 @@
 import * as React from "react";
+import { RTEditor } from "../lib/index";
 import "./App.css";
-import Editor from "./Editor";
 
 interface AppState {
     content: string;
@@ -21,7 +21,7 @@ class App extends React.Component<{}, AppState> {
         const { content } = this.state;
         return (
             <div className="rte-app">
-                <Editor content={content} onChange={this.onChange}/>
+                <RTEditor content={content} onChange={this.onChange}/>
             </div>
         );
     }
