@@ -16,7 +16,7 @@ interface RTEEditorState {
     readonly editorState: EditorState;
 }
 
-export class RTEEditor
+export default class RTEEditor
     extends React.Component<RTEEditorProps, RTEEditorState> {
     state: RTEEditorState = {
         editorState: EditorState.createEmpty(),

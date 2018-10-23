@@ -2,16 +2,16 @@ import { ContentState } from "draft-js";
 import { mount, shallow } from "enzyme";
 import * as React from "react";
 
-import { RTEEditor } from "./RTEEditor";
+import Editor from "./RTEEditor";
 
 it("renders a div with a certain class", () => {
-    const editor = shallow(<RTEEditor />);
+    const editor = shallow(<Editor />);
     expect(editor.name()).toEqual("div");
     expect(editor.hasClass("rte-editor")).toBeTruthy();
 });
 
 it("contains an editor div with a certain class", () => {
-    const editor = shallow(<RTEEditor />);
+    const editor = shallow(<Editor />);
     expect(editor.find(".rte-editor-container")).toHaveLength(1);
 });
 
@@ -23,7 +23,7 @@ xit("displays the input text", () => {
         onContentChangeCalled = true;
     }
 
-    const editor = mount(<RTEEditor onContentChange={onContentChange}/>);
+    const editor = mount(<Editor onContentChange={onContentChange}/>);
     editor.find(
         ".public-DraftEditor-content").simulate("keyDown", {
         keyCode: 40,

@@ -3,8 +3,8 @@ import * as ReactDOM from "react-dom";
 
 import { shallow } from "enzyme";
 
+import { RTEditor } from "../lib";
 import App from "./App";
-import { RTEEditor } from "./RTEEditor";
 
 it("renders without crashing", () => {
     const div = document.createElement("div");
@@ -14,5 +14,5 @@ it("renders without crashing", () => {
 
 it("contains the editor component", () => {
     const app = shallow(<App />);
-    expect(app.containsMatchingElement(<RTEEditor />)).toBeTruthy();
+    expect(app.containsMatchingElement(<RTEditor />)).toBeTruthy();
 });
