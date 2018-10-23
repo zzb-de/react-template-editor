@@ -3,13 +3,16 @@ import {
     EditorState,
     RichUtils,
     DraftHandleValue,
-    getDefaultKeyBinding, ContentState,
+    getDefaultKeyBinding,
 } from "draft-js";
+// @ts-ignore
 import * as React from "react";
 import { StyleButton } from "./StyleButton";
+import { RTState } from "./types";
 
 export interface RTEEditorProps {
-    readonly onContentChange?: (content: ContentState) => void;
+    readonly initialContent?: RTState;
+    readonly onContentChange?: (content: RTState) => void;
 }
 
 interface RTEEditorState {
@@ -25,7 +28,6 @@ export default class RTEEditor
     constructor(props: Readonly<RTEEditorProps>) {
         super(props);
         this.onChange = this.onChange.bind(this);
-
         this.handleKeyCommand = this.handleKeyCommand.bind(this);
         this.mapKeyToEditorCommand = this.mapKeyToEditorCommand.bind(this);
         this.toggleInlineStyle = this.toggleInlineStyle.bind(this);
@@ -69,6 +71,7 @@ export default class RTEEditor
                         keyBindingFn={this.mapKeyToEditorCommand}
                         onChange={this.onChange}
                         placeholder="Bitte Text eingeben."
+
                         spellCheck
                     />
                 </div>
@@ -76,32 +79,40 @@ export default class RTEEditor
         );
     }
 
+    componentDidUpdate(oldProps: RTEEditorProps) {
+        if (oldProps.initialContent !== this.props.initialContent) {
+            this.setState({editorState: EditorState.push(
+                this.state.editorState, this.props.initialContent!,
+                "change-block-data"
+            )});
+        }
+    }
+
     private onChange(editorState: EditorState) {
+        this.setState({editorState});
         if (this.props.onContentChange) {
             this.props.onContentChange(
                 this.state.editorState.getCurrentContent());
         }
-        this.setState({editorState});
     }
 
-    private handleKeyCommand(command: any, editorState: EditorState):
-        DraftHandleValue
-    {
+    private handleKeyCommand(command: any):
+        DraftHandleValue {
         const newState = RichUtils.handleKeyCommand(
             this.state.editorState, command);
         if (newState) {
-            this.setState({ editorState: newState });
+            this.setState({editorState: newState});
             return "handled";
         }
         return "not-handled";
     }
 
     private mapKeyToEditorCommand(e: React.KeyboardEvent) {
-        if (e.keyCode === 9 /* TAB */) {
+        if (e.keyCode === 9 ) {
             const newEditorState = RichUtils.onTab(
                 e,
                 this.state.editorState,
-                4, /* maxDepth */
+                4,
             );
             if (newEditorState !== this.state.editorState) {
                 this.onChange(newEditorState);
@@ -118,4 +129,5 @@ export default class RTEEditor
             editorState,
         });
     }
+
 }
