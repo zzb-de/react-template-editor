@@ -17,7 +17,7 @@ it("displays the label given in the label prop", () => {
     expect(styleButton.text()).toEqual("Test");
 });
 
-it("calls onClick when the input changes", () => {
+it("calls onToggle when the input changes", () => {
     let called = false;
 
     function onToggle(s: string) {
