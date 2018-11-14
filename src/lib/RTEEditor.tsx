@@ -5,7 +5,6 @@ import {
     DraftHandleValue,
     getDefaultKeyBinding,
 } from "draft-js";
-// @ts-ignore
 import * as React from "react";
 import { StyleButton } from "./StyleButton";
 import { RTState } from "./types";
