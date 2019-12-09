@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@types/draft-js": "^0.10.24",
-    "@types/enzyme": "^3.1.13",
+    "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",
