@@ -11,7 +11,7 @@
     "css-loader": "3.4.1",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "draft-js": "^0.11.3",
+    "draft-js": "^0.11.4",
     "draftjs-md-converter": "^1.1.1",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "5.0.2",
