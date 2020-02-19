@@ -1205,7 +1205,7 @@
   resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-4.2.5.tgz#ae13981bc8711c98313a6ac1c361194d6bf2d39b"
   integrity sha512-+rEx4jLOeZpUcdvll7jEg/7hNbwYvHWFy4IGW/tk2JdbyB3SJVyIP6arAwzTH/sp/pO9jftfyZnRj4//sLbLvQ==
 
-"@textlint/markdown-to-ast@^6.0.8":
+"@textlint/markdown-to-ast@6.1.6":
   version "6.1.6"
   resolved "https://registry.yarnpkg.com/@textlint/markdown-to-ast/-/markdown-to-ast-6.1.6.tgz#9d081a64d4a95a4958f5cebc75b1efdb7cdaf7ab"
   integrity sha512-xIaMn6gW1Ig+M+2Xcdbxt4cgOqWJSuB0pIO98KppQyqPzQ5k5deea7SBABqLZiKeNIxLl+2C1vfIfnBFFjxlmg==
@@ -3348,12 +3348,12 @@ draft-js@^0.11.4:
     immutable "~3.7.4"
     object-assign "^4.1.1"
 
-draftjs-md-converter@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/draftjs-md-converter/-/draftjs-md-converter-1.3.0.tgz#e18801da394b556644564c4dfc0529f6dbe27a10"
-  integrity sha512-KGuA6earMXiSuhSdx++NH5t2hMv6C8mcdQilHsf9eO7GqZKk0KQG5Vj2QFQe5BupaA1t/L4b910qGiBxOMH5oA==
+draftjs-md-converter@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/draftjs-md-converter/-/draftjs-md-converter-1.4.0.tgz#52155d956126333356f08376ee4d9ef379d03221"
+  integrity sha512-RQ0mhyZMg2+W3RgZbnTLu+AAl4Kghy3ANXYSA/F7ZBbB7fpD2cwCDhR8/vDoPYJfi78Xj0JzwRKLdI62vpJDtw==
   dependencies:
-    "@textlint/markdown-to-ast" "^6.0.8"
+    "@textlint/markdown-to-ast" "6.1.6"
 
 duplexer3@^0.1.4:
   version "0.1.4"
