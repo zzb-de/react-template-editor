@@ -2,7 +2,7 @@
   "name": "react-template-editor",
   "version": "0.1.0",
   "dependencies": {
-    "autoprefixer": "9.7.4",
+    "autoprefixer": "9.7.5",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
