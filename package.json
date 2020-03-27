@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "autoprefixer": "9.7.5",
-    "babel-jest": "^25.2.0",
+    "babel-jest": "^25.2.3",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
